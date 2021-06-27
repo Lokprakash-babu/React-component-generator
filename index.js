@@ -59,7 +59,7 @@ yargs.command({
         }
     },
     handler: function (argv){
-        createComponent(argV);
+        createComponent(argv);
     }
 })
 
