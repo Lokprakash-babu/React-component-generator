@@ -59,55 +59,21 @@ yargs.command({
         }
     },
     handler: function (argv){
-        if(argv.c){
-            createClassComponent(argv);
-        }
-        else{
-            createFunctionComponent(argv);
-        }
+        createComponent(argV);
     }
 })
 
 yargs.parse();
 
-async function createClassComponent(argV){
-    
+
+async function createComponent(argV){
     log(npath.dirname(require.main.filename));   
     const homePath =npath.dirname(require.main.filename);
-     
     let name = getName(argV);
     name = name.slice(0,1).toUpperCase()+name.slice(1);
 
-    const fc = `
-import React, {Component} from 'react';
-
-class ${name} extends Component{
-    render() {
-        return <h1>${name} works</h1>;
-    }
-}
-
-export default ${name};
-`;
-
-    const pathCheck = await checkPath(homePath+"/src/"+argV.p); 
-    if(pathCheck){
-        genFile(homePath+"/src/"+argV.p+".jsx", fc, name, argV);
-    }
-    else{
-        await generateDir(homePath+"/src/"+argV.p+".jsx");
-        genFile(homePath+"/src/"+argV.p+".jsx", fc, name, argV);
-    }
-
-}
-
-async function createFunctionComponent(argV){
-    log(npath.dirname(require.main.filename));   
-     const homePath =npath.dirname(require.main.filename);
-    let name = getName(argV);
-    name = name.slice(0,1).toUpperCase()+name.slice(1);
-
-    const fc = `
+// function component file content
+    let fc = `
 import React from 'react';
 
 const ${name} = ()=>{
@@ -118,6 +84,23 @@ const ${name} = ()=>{
 
 export default ${name};
 `;
+
+//if class component to be generated argV.c = true
+    if(argV.c){
+        fc=`
+import React, {Component} from 'react';
+
+class ${name} extends Component{
+    render() {
+        return <h1>${name} works</h1>;
+    }
+}
+
+export default ${name};
+`;
+    }
+
+    //checking path of the directory 
     const pathCheck = await checkPath(homePath+"/src/"+argV.p); 
     if(pathCheck){
         genFile(homePath+"/src/"+argV.p+".jsx", fc, name, argV);
