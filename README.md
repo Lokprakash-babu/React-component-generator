@@ -12,7 +12,7 @@ A light weight react component generator for creating a component at ease withou
 ```sh-session
 $ npm install -g component-generator-react
 $ r --version
-2.0.0
+2.0.2
 $ r g -p "component name"
 ```
 # commands
