@@ -6,7 +6,7 @@ const log = console.log;
 const npath = require("path");
 const { exec } = require("child_process");
 
-yargs.version("1.0.0");
+yargs.version("2.0.0");
 
 function genFile(path, content, name, argV){
     fs.writeFile(path, content, function (err) {
