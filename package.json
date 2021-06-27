@@ -1,6 +1,6 @@
 {
   "name": "component-generator-react",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "It is a light weight CLI for creating a component with less manual intervention in React.",
   "main": "index.js",
   "scripts": {
