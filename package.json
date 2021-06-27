@@ -1,5 +1,5 @@
 {
-  "name": "component-generator-react",
+  "name": "rcg",
   "version": "2.0.0",
   "description": "It is a light weight CLI for creating a component with less manual intervention in React.",
   "main": "index.js",
