@@ -1,0 +1,31 @@
+{
+  "name": "component-generator-react",
+  "version": "1.0.0",
+  "description": "It is a light weight CLI for creating a component with less manual intervention in React.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "React",
+    "react",
+    "React-cli",
+    "react-cli",
+    "React-component-generator",
+    "react-component-generator",
+    "rcg",
+    "redux",
+    "cli",
+    "node js"
+  ],
+  "author": "Lokprakash Babu",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "yargs": "^17.0.1"
+  },
+  "bin": {
+    "r": "index.js"
+  }
+}
